@@ -20,7 +20,7 @@ np.array(x)
 X=np.float32(X)
 X=list(X)
 #Upload Model
-model = keras.models.load_model('C:\\Users\\dgmis\\Desktop\\IIT Mandi\\India Today\\parent_label')
+model = keras.models.load_model('C:\\Users\\dgmis\\Desktop\\IIT Mandi\\India Today\\parent_model')
 model.summary()
 prediction=model.predict(np.array([x]))
 #Feature extractor
