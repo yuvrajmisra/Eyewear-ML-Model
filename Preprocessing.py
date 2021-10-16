@@ -75,7 +75,7 @@ for i in dt.index:
     parent_data.append([new_img,dt['parent_category'][i]])
 
 parent_data=np.array(parent_data)
-np.save("parent_100.npy",frame_data)
+np.save("parent_100.npy",parent_data)
 
 similar_data=[]
 IMG_SIZE1=100
