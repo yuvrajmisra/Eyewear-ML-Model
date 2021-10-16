@@ -29,3 +29,4 @@ The India Today Group Machine Learning Challenge
 
 7. The webpage outputs the frame shape, parent category and 10 similar images.
 
+Note: Directory Paths should be changed in the scripts wherever it is required.
