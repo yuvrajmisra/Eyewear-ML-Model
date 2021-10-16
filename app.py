@@ -87,19 +87,19 @@ def predict():
     #Finding Similar Images
     feature=feat_extract.predict(np.array([new_img]))
     pca_feature=pca.transform(feature)
-    similar_idx = [ distance.cosine(pca_feature, feat) for feat in pca_features ]
-    idx_closest = sorted(range(len(similar_idx)), key=lambda k: similar_idx[k])[0:11]
+    sim_i = [ distance.cosine(pca_feature, feat) for feat in pca_features ]
+    close_i = sorted(range(len(sim_i)), key=lambda k: sim_i[k])[0:11]
     #Visualizing closest images
     I=[];Caption=[];
-    for idx in idx_closest:
-            img = X[idx]
+    for j in close_i:
+            img = X[j]
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img=Image.fromarray(img)
             data = io.BytesIO()
             img.save(data, "JPEG")
             encoded_img = base64.b64encode(data.getvalue())
             I.append(encoded_img)
-            Caption.append(cap[idx])
+            Caption.append(cap[j])
     return render_template('index.html', frame_text='Frame Shape: ',parent_text='Parent Category: ',
                           similarImage_text='10 Similar Images',prediction_text1=s2,prediction_text2=s1,
                           img_data=encoded_img_data.decode('utf-8'),img_data1=I[0].decode('utf-8'),
