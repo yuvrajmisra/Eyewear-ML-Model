@@ -44,10 +44,10 @@ pca_features = pca.transform(features)
 
 #Similarity distance
 sim_i = [ distance.cosine(pca_features[200], feat) for feat in pca_features ]
-i_close = sorted(range(len(sim_i)), key=lambda k: sim_i[k])[0:11]
+close_i = sorted(range(len(sim_i)), key=lambda k: sim_i[k])[0:11]
 #Visualizing closest images
 I=[]
-for j in i_close:
+for j in close_i:
     img = np.uint8(X[j])
     I.append(img)
 
