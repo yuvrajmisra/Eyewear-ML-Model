@@ -1,5 +1,4 @@
 # Eyewear-ML-Model
-The India Today Group Machine Learning Challenge
 
 1. Run the preprocessing script and get the processed data ready for the 3 ML models. Namely we will get three types of data files of type ".npy" after running this script:
 
